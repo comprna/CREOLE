@@ -12,6 +12,12 @@ Reference-free identification of open reading frames and encoded proteins from n
 # Usage example 
 **Warning** All the commands and parameters are still highly experimental and subject to changes in future versions
 
+- Sample commands
+```
+python creole.py -gmst gmst.pl -reads read.fa -o file.out -ct prok -st direct -diamond diamond -diamond_bd nr.dmnd -f 2 -minimap2 minimap2 -mr gencode.v31.transcripts.fa -prot gencode_v31/gencode.v31.pc_translations.fa
+
+```
+
 - in cluster (Slurm)
 
 ```
@@ -56,11 +62,6 @@ for index in ${!array[@]}; do
 done
 ```
 
-- Sample commands
-```
-python creole.py -gmst gmst.pl -reads read.fa -o file.out -ct prok -st direct -diamond diamond -diamond_bd nr.dmnd -f 2 -minimap2 minimap2 -mr gencode.v31.transcripts.fa -prot gencode_v31/gencode.v31.pc_translations.fa
-
-```
 - Commands and options
 
 **-reads:** input fasta/fastq file
