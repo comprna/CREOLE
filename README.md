@@ -7,7 +7,7 @@ Reference-free identification of open reading frames and encoded proteins from n
 # Installation
 - Clone the repository
 
-`git clone --recurse-submodules https://github.com/comprna/RATTLE`
+`git clone --recurse-submodules https://github.com/comprna/CREOLE`
 
 # Usage example 
 **Warning** All the commands and parameters are still highly experimental and subject to changes in future versions
