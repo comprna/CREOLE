@@ -1,0 +1,267 @@
+
+
+
+-------------------------------------------------
+start time            : Sun Jan 17 22:21:52 2021
+working directory     : /home/jmaky/NetBeansProjects/CREOLE/creole/datas
+command line          : --format GFF --strand direct --faa --prok --output /home/jmaky/NetBeansProjects/CREOLE/creole/tests/joe ../datas/sirvs_ref.fa --verbose --fnn
+output file with predictions : /home/jmaky/NetBeansProjects/CREOLE/creole/tests/joe
+input sequence        : ../datas/sirvs_ref.fa
+number of bins        : 1
+filter                : 0
+strand                : direct
+markov chain order    : cod = 2, non = 2
+genetic code          : 11
+search for motif      : 1
+motif width           : 6
+prestart length       : 40
+fixed motif position  : 0
+off overlap           : 0
+identity threshold    : 0.99
+maximum iteration     : 10
+gene overlap off      : 0
+strand to predict on  : direct
+GeneMarkS parameters  : /home/jmaky/Documents/tools/gmst_linux_64/par_11.default
+initial hmm model     : 
+output format         : GFF
+output nucleotides    : 1
+output proteins       : 1
+gibbs_version         : 3
+
+         run starts here:
+prepare sequence
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --clean_join sequence --seq ../datas/sirvs_ref.fa --log gms.log
+Clean-Join      IN   OUT
+Contigs - 69 29
+All letters - 78241   55439
+Unambiguous letters - 78241 54039
+A - 25715 17617
+C - 14331 9654
+G - 17823 12512
+T - 20372 14256
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --stat_fasta --seq ../datas/sirvs_ref.fa > initial.meta.lst.feature 
+system call done
+min_GC=29  max_GC=51 total_seq_length=78241
+(37)->(27328)
+(42)->(42967)
+(44)->(52175)
+bin number = 1
+GC range = 29,51
+prepare sequence
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --clean_join sequence --seq ../datas/sirvs_ref.fa --log gms.log
+Clean-Join      IN   OUT
+Contigs - 69 29
+All letters - 78241   55439
+Unambiguous letters - 78241 54039
+A - 25715 17617
+C - 14331 9654
+G - 17823 12512
+T - 20372 14256
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+run initial prediction
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp -s d   sequence  -m /home/jmaky/Documents/tools/gmst_linux_64/MetaGeneMark_v1.mod  -o itr_0.lst
+system call done
+entering iteration loop
+build model: itr_1.mod for iteration: 1
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_1.mod --seq sequence --geneset itr_0.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.1 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.1 6 -o gibbs_out.1 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.1 --mod itr_1.mod --seq startseq.1 --log gms.log
+-34	0.021
+-33	0.026
+-32	0.026
+-31	0.026
+-30	0.026
+-29	0.026
+-28	0.026
+-27	0.026
+-26	0.026
+-25	0.026
+-24	0.026
+-23	0.026
+-22	0.026
+-21	0.026
+-20	0.026
+-19	0.026
+-18	0.026
+-17	0.026
+-16	0.031
+-15	0.041
+-14	0.046
+-13	0.072
+-12	0.041
+-11	0.026
+-10	0.026
+-9	0.026
+-8	0.026
+-7	0.026
+-6	0.026
+-5	0.026
+-4	0.026
+-3	0.026
+-2	0.026
+-1	0.026
+0	0.021
+Pos   A   C   G   T
+1 0.625 0.125 0.125 0.125
+2 0.625 0.125 0.125 0.125
+3 0.625 0.125 0.125 0.125
+4 0.125 0.125 0.625 0.125
+5 0.625 0.125 0.125 0.125
+6 0.125 0.625 0.125 0.125
+
+system call done
+prediction, iteration: 1
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp -s d   sequence  -m itr_1.mod  -o itr_1.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_1.lst --target itr_0.lst
+compare itr_0.lst and itr_1.lst: 0.5070
+build model: itr_2.mod for iteration: 2
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_2.mod --seq sequence --geneset itr_1.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.2 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.2 6 -o gibbs_out.2 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.2 --mod itr_2.mod --seq startseq.2 --log gms.log
+-34	0.021
+-33	0.026
+-32	0.026
+-31	0.026
+-30	0.026
+-29	0.026
+-28	0.026
+-27	0.026
+-26	0.031
+-25	0.041
+-24	0.031
+-23	0.026
+-22	0.026
+-21	0.041
+-20	0.072
+-19	0.041
+-18	0.026
+-17	0.026
+-16	0.026
+-15	0.026
+-14	0.026
+-13	0.026
+-12	0.026
+-11	0.026
+-10	0.026
+-9	0.026
+-8	0.026
+-7	0.026
+-6	0.026
+-5	0.026
+-4	0.026
+-3	0.026
+-2	0.026
+-1	0.026
+0	0.021
+Pos   A   C   G   T
+1 0.125 0.125 0.125 0.625
+2 0.625 0.125 0.125 0.125
+3 0.125 0.625 0.125 0.125
+4 0.125 0.125 0.625 0.125
+5 0.125 0.125 0.625 0.125
+6 0.125 0.125 0.125 0.625
+
+system call done
+prediction, iteration: 2
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp -s d   sequence  -m itr_2.mod  -o itr_2.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_2.lst --target itr_1.lst
+compare itr_1.lst and itr_2.lst: 0.8621
+build model: itr_3.mod for iteration: 3
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_3.mod --seq sequence --geneset itr_2.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.3 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.3 6 -o gibbs_out.3 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.3 --mod itr_3.mod --seq startseq.3 --log gms.log
+-34	0.021
+-33	0.026
+-32	0.026
+-31	0.026
+-30	0.026
+-29	0.026
+-28	0.026
+-27	0.026
+-26	0.031
+-25	0.041
+-24	0.031
+-23	0.026
+-22	0.026
+-21	0.041
+-20	0.072
+-19	0.041
+-18	0.026
+-17	0.026
+-16	0.026
+-15	0.026
+-14	0.026
+-13	0.026
+-12	0.026
+-11	0.026
+-10	0.026
+-9	0.026
+-8	0.026
+-7	0.026
+-6	0.026
+-5	0.026
+-4	0.026
+-3	0.026
+-2	0.026
+-1	0.026
+0	0.021
+Pos   A   C   G   T
+1 0.125 0.125 0.125 0.625
+2 0.625 0.125 0.125 0.125
+3 0.125 0.625 0.125 0.125
+4 0.125 0.125 0.625 0.125
+5 0.125 0.125 0.625 0.125
+6 0.125 0.125 0.125 0.625
+
+system call done
+prediction, iteration: 3
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp -s d   sequence  -m itr_3.mod  -o itr_3.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_3.lst --target itr_2.lst
+compare itr_2.lst and itr_3.lst: 1.0000
+Stopped iterations on identity: 1.0000
+create: ../datas/sirvs_ref.fa.mod
+cp itr_3.mod ../datas/sirvs_ref.fa.mod
+system call done
+output: GeneMark_hmm.mod
+cp ../datas/sirvs_ref.fa.mod GeneMark_hmm.mod
+system call done
+predict genes using native model with motif
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp -s d  -A /home/jmaky/NetBeansProjects/CREOLE/creole/tests/joe.faa  -D /home/jmaky/NetBeansProjects/CREOLE/creole/tests/joe.fnn  -r -m GeneMark_hmm.mod -o /home/jmaky/NetBeansProjects/CREOLE/creole/tests/joe  -f G  ../datas/sirvs_ref.fa
+system call done
+rm -f sequence initial.meta.lst initial.meta.lst.fna initial.meta.lst.feature sequence itr_0.lst itr_1.mod startseq.1 gibbs_out.1 itr_1.lst itr_2.mod startseq.2 gibbs_out.2 itr_2.lst itr_3.mod startseq.3 gibbs_out.3 itr_3.lst ../datas/sirvs_ref.fa.mod with_seq.out
+system call done
+End: Sun Jan 17 22:21:52 2021
+

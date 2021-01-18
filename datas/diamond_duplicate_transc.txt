@@ -1,0 +1,1 @@
+reads 	 duplication_count 	 txt 

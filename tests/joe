@@ -1,0 +1,103 @@
+##gff-version 2
+##source-version GeneMark.hmm_PROKARYOTIC 3.20
+##date: Sun Jan 17 22:21:52 2021
+# Sequence file name: ../datas/sirvs_ref.fa
+# Model file name: GeneMark_hmm.mod
+# RBS: true
+# Model information: GeneMarkS_default_gcode_11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SIRV504	GeneMark.hmm	CDS	86	190	-129.918960	+	0	gene_id=1, length=105, gene_score=-129.918960, rbs_score=-0.422126, rbs_spacer=28, stop_enforced=N, start_codon=2, logodd=11.239158
+SIRV504	GeneMark.hmm	CDS	215	427	-268.388299	+	0	gene_id=2, length=213, gene_score=-268.388299, rbs_score=-2.670899, rbs_spacer=9, stop_enforced=N, start_codon=1, logodd=17.162699
+SIRV504	GeneMark.hmm	CDS	518	664	-167.951040	+	0	gene_id=3, length=147, gene_score=-167.951040, rbs_score=-0.501102, rbs_spacer=22, stop_enforced=N, start_codon=0, logodd=29.382313
+SIRV504	GeneMark.hmm	CDS	710	922	-269.582540	+	0	gene_id=4, length=213, gene_score=-269.582540, rbs_score=-2.014726, rbs_spacer=29, stop_enforced=N, start_codon=0, logodd=16.945413
+SIRV504	GeneMark.hmm	CDS	1079	1315	-292.029071	+	0	gene_id=5, length=237, gene_score=-292.029071, rbs_score=-2.281172, rbs_spacer=20, stop_enforced=N, start_codon=1, logodd=32.644487
+
+
+
+
+
+SIRV509	GeneMark.hmm	CDS	367	579	-268.388299	+	0	gene_id=6, length=213, gene_score=-268.388299, rbs_score=-2.670899, rbs_spacer=9, stop_enforced=N, start_codon=1, logodd=17.162699
+SIRV509	GeneMark.hmm	CDS	670	816	-167.951040	+	0	gene_id=7, length=147, gene_score=-167.951040, rbs_score=-0.501102, rbs_spacer=22, stop_enforced=N, start_codon=0, logodd=29.382313
+
+SIRV510	GeneMark.hmm	CDS	1826	1930	-129.918960	+	0	gene_id=8, length=105, gene_score=-129.918960, rbs_score=-0.422126, rbs_spacer=28, stop_enforced=N, start_codon=2, logodd=11.239158
+SIRV510	GeneMark.hmm	CDS	1955	2167	-268.388299	+	0	gene_id=9, length=213, gene_score=-268.388299, rbs_score=-2.670899, rbs_spacer=9, stop_enforced=N, start_codon=1, logodd=17.162699
+SIRV510	GeneMark.hmm	CDS	2258	2404	-167.951040	+	0	gene_id=10, length=147, gene_score=-167.951040, rbs_score=-0.501102, rbs_spacer=22, stop_enforced=N, start_codon=0, logodd=29.382313
+
+
+
+SIRV601	GeneMark.hmm	CDS	350	655	-318.036081	+	0	gene_id=11, length=306, gene_score=-318.036081, rbs_score=2.826223, rbs_spacer=25, stop_enforced=N, start_codon=1, logodd=95.863810
+
+SIRV602	GeneMark.hmm	CDS	228	341	-120.476000	+	0	gene_id=12, length=114, gene_score=-120.476000, rbs_score=2.397414, rbs_spacer=27, stop_enforced=N, start_codon=0, logodd=27.105004
+
+
+SIRV604	GeneMark.hmm	CDS	258	749	-531.440089	+	0	gene_id=13, length=492, gene_score=-531.440089, rbs_score=3.322651, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=145.526407
+
+SIRV605	GeneMark.hmm	CDS	215	706	-531.440089	+	0	gene_id=14, length=492, gene_score=-531.440089, rbs_score=3.322651, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=145.526407
+
+SIRV606	GeneMark.hmm	CDS	2	82	-96.084164	+	0	gene_id=15, length=81, gene_score=-96.084164, rbs_score=0.033333, rbs_spacer=-1, stop_enforced=N, start_codon=0, logodd=13.156702
+SIRV606	GeneMark.hmm	CDS	92	493	-441.424112	+	0	gene_id=16, length=402, gene_score=-441.424112, rbs_score=-1.502158, rbs_spacer=20, stop_enforced=N, start_codon=1, logodd=104.958428
+
+SIRV607	GeneMark.hmm	CDS	321	602	-329.034334	+	0	gene_id=17, length=282, gene_score=-329.034334, rbs_score=3.322651, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=53.690602
+
+SIRV608	GeneMark.hmm	CDS	3	83	-99.149921	+	0	gene_id=18, length=81, gene_score=-99.149921, rbs_score=0.033333, rbs_spacer=-1, stop_enforced=N, start_codon=0, logodd=9.438959
+SIRV608	GeneMark.hmm	CDS	105	197	-110.511819	+	0	gene_id=19, length=93, gene_score=-110.511819, rbs_score=-0.671734, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=7.103819
+
+SIRV609	GeneMark.hmm	CDS	208	486	-327.959582	+	0	gene_id=20, length=279, gene_score=-327.959582, rbs_score=3.322651, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=58.108854
+
+SIRV610	GeneMark.hmm	CDS	1	306	-318.036081	+	0	gene_id=21, length=306, gene_score=-318.036081, rbs_score=0.033333, rbs_spacer=-1, stop_enforced=N, start_codon=1, logodd=95.863810
+
+
+SIRV612	GeneMark.hmm	CDS	258	749	-531.440089	+	0	gene_id=22, length=492, gene_score=-531.440089, rbs_score=3.322651, rbs_spacer=20, stop_enforced=N, start_codon=0, logodd=145.526407
+
+
+SIRV614	GeneMark.hmm	CDS	2	283	-313.039516	+	0	gene_id=23, length=282, gene_score=-313.039516, rbs_score=0.033333, rbs_spacer=-1, stop_enforced=N, start_codon=0, logodd=69.332931
+
+
+SIRV616	GeneMark.hmm	CDS	2	82	-96.084164	+	0	gene_id=24, length=81, gene_score=-96.084164, rbs_score=0.033333, rbs_spacer=-1, stop_enforced=N, start_codon=0, logodd=13.156702
+SIRV616	GeneMark.hmm	CDS	92	412	-351.333928	+	0	gene_id=25, length=321, gene_score=-351.333928, rbs_score=-1.502158, rbs_spacer=20, stop_enforced=N, start_codon=1, logodd=83.283103
+SIRV616	GeneMark.hmm	CDS	431	523	-110.511819	+	0	gene_id=26, length=93, gene_score=-110.511819, rbs_score=0.825496, rbs_spacer=30, stop_enforced=N, start_codon=0, logodd=7.103819
+
+
+
+
+
+
+
+
+
+

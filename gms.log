@@ -1,0 +1,548 @@
+
+
+
+-------------------------------------------------
+start time            : Sun Jan 17 06:46:02 2021
+working directory     : /home/jmaky/NetBeansProjects/CREOLE/creole
+command line          : --format GFF --strand both --faa --fnn --prok --output tests/joe datas/sirvs_ERR2680377_brain_c1_cDNA.fq --verbose
+output file with predictions : tests/joe
+input sequence        : datas/sirvs_ERR2680377_brain_c1_cDNA.fq
+number of bins        : 1
+filter                : 0
+strand                : both
+markov chain order    : cod = 2, non = 2
+genetic code          : 11
+search for motif      : 1
+motif width           : 6
+prestart length       : 40
+fixed motif position  : 0
+off overlap           : 0
+identity threshold    : 0.99
+maximum iteration     : 10
+gene overlap off      : 0
+strand to predict on  : both
+GeneMarkS parameters  : /home/jmaky/Documents/tools/gmst_linux_64/par_11.default
+initial hmm model     : 
+output format         : GFF
+output nucleotides    : 1
+output proteins       : 1
+gibbs_version         : 3
+
+         run starts here:
+prepare sequence
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --clean_join sequence --seq datas/sirvs_ERR2680377_brain_c1_cDNA.fq --log gms.log
+Clean-Join      IN   OUT
+Contigs - 1 1
+All letters - 36853121   36853121
+Unambiguous letters - 36494148 36494148
+A - 9816693 9816693
+C - 8108167 8108167
+G - 8025999 8025999
+T - 10543289 10543289
+N - 358973 358973
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --stat_fasta --seq datas/sirvs_ERR2680377_brain_c1_cDNA.fq > initial.meta.lst.feature 
+system call done
+min_GC=  max_GC= total_seq_length=0
+()->()
+()->()
+()->()
+bin number = 1
+GC range = ,
+prepare sequence
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --clean_join sequence --seq datas/sirvs_ERR2680377_brain_c1_cDNA.fq --log gms.log
+Clean-Join      IN   OUT
+Contigs - 1 1
+All letters - 36853121   36853121
+Unambiguous letters - 36494148 36494148
+A - 9816693 9816693
+C - 8108167 8108167
+G - 8025999 8025999
+T - 10543289 10543289
+N - 358973 358973
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+run initial prediction
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m /home/jmaky/Documents/tools/gmst_linux_64/MetaGeneMark_v1.mod  -o itr_0.lst
+system call done
+entering iteration loop
+build model: itr_1.mod for iteration: 1
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_1.mod --seq sequence --geneset itr_0.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.1 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.1 6 -o gibbs_out.1 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.1 --mod itr_1.mod --seq startseq.1 --log gms.log
+-34	0.028
+-33	0.037
+-32	0.040
+-31	0.034
+-30	0.032
+-29	0.033
+-28	0.029
+-27	0.027
+-26	0.027
+-25	0.027
+-24	0.028
+-23	0.030
+-22	0.027
+-21	0.027
+-20	0.028
+-19	0.030
+-18	0.032
+-17	0.028
+-16	0.026
+-15	0.025
+-14	0.024
+-13	0.023
+-12	0.028
+-11	0.032
+-10	0.034
+-9	0.035
+-8	0.028
+-7	0.026
+-6	0.028
+-5	0.024
+-4	0.022
+-3	0.022
+-2	0.021
+-1	0.023
+0	0.024
+Pos   A   C   G   T
+1 0.434 0.015 0.296 0.254
+2 0.371 0.111 0.231 0.287
+3 0.256 0.445 0.001 0.298
+4 0.009 0.001 0.985 0.006
+5 0.091 0.199 0.354 0.356
+6 0.136 0.239 0.061 0.564
+
+system call done
+prediction, iteration: 1
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_1.mod  -o itr_1.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_1.lst --target itr_0.lst
+compare itr_0.lst and itr_1.lst: 0.2708
+build model: itr_2.mod for iteration: 2
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_2.mod --seq sequence --geneset itr_1.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.2 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.2 6 -o gibbs_out.2 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.2 --mod itr_2.mod --seq startseq.2 --log gms.log
+-34	0.026
+-33	0.037
+-32	0.041
+-31	0.035
+-30	0.029
+-29	0.028
+-28	0.022
+-27	0.022
+-26	0.026
+-25	0.029
+-24	0.030
+-23	0.030
+-22	0.029
+-21	0.031
+-20	0.031
+-19	0.034
+-18	0.032
+-17	0.026
+-16	0.023
+-15	0.024
+-14	0.025
+-13	0.026
+-12	0.028
+-11	0.028
+-10	0.032
+-9	0.033
+-8	0.027
+-7	0.026
+-6	0.032
+-5	0.032
+-4	0.024
+-3	0.020
+-2	0.022
+-1	0.025
+0	0.023
+Pos   A   C   G   T
+1 0.405 0.002 0.346 0.247
+2 0.461 0.034 0.252 0.253
+3 0.222 0.539 0.003 0.237
+4 0.032 0.092 0.858 0.018
+5 0.046 0.129 0.453 0.373
+6 0.037 0.154 0.020 0.789
+
+system call done
+prediction, iteration: 2
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_2.mod  -o itr_2.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_2.lst --target itr_1.lst
+compare itr_1.lst and itr_2.lst: 0.5758
+build model: itr_3.mod for iteration: 3
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_3.mod --seq sequence --geneset itr_2.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.3 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.3 6 -o gibbs_out.3 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.3 --mod itr_3.mod --seq startseq.3 --log gms.log
+-34	0.025
+-33	0.035
+-32	0.038
+-31	0.034
+-30	0.030
+-29	0.032
+-28	0.025
+-27	0.023
+-26	0.025
+-25	0.026
+-24	0.029
+-23	0.029
+-22	0.031
+-21	0.030
+-20	0.029
+-19	0.032
+-18	0.030
+-17	0.026
+-16	0.026
+-15	0.026
+-14	0.025
+-13	0.026
+-12	0.024
+-11	0.025
+-10	0.032
+-9	0.035
+-8	0.026
+-7	0.024
+-6	0.031
+-5	0.035
+-4	0.025
+-3	0.022
+-2	0.024
+-1	0.027
+0	0.024
+Pos   A   C   G   T
+1 0.346 0.002 0.413 0.238
+2 0.497 0.029 0.248 0.226
+3 0.248 0.531 0.002 0.219
+4 0.052 0.119 0.806 0.024
+5 0.022 0.088 0.531 0.360
+6 0.018 0.055 0.021 0.907
+
+system call done
+prediction, iteration: 3
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_3.mod  -o itr_3.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_3.lst --target itr_2.lst
+compare itr_2.lst and itr_3.lst: 0.8088
+build model: itr_4.mod for iteration: 4
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_4.mod --seq sequence --geneset itr_3.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.4 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.4 6 -o gibbs_out.4 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.4 --mod itr_4.mod --seq startseq.4 --log gms.log
+-34	0.026
+-33	0.037
+-32	0.040
+-31	0.033
+-30	0.030
+-29	0.032
+-28	0.026
+-27	0.023
+-26	0.026
+-25	0.027
+-24	0.027
+-23	0.031
+-22	0.033
+-21	0.032
+-20	0.032
+-19	0.029
+-18	0.027
+-17	0.027
+-16	0.025
+-15	0.023
+-14	0.025
+-13	0.024
+-12	0.023
+-11	0.027
+-10	0.034
+-9	0.037
+-8	0.028
+-7	0.026
+-6	0.032
+-5	0.034
+-4	0.024
+-3	0.020
+-2	0.021
+-1	0.025
+0	0.023
+Pos   A   C   G   T
+1 0.343 0.003 0.422 0.232
+2 0.514 0.028 0.238 0.220
+3 0.273 0.512 0.001 0.214
+4 0.055 0.164 0.763 0.018
+5 0.019 0.089 0.561 0.332
+6 0.014 0.023 0.024 0.939
+
+system call done
+prediction, iteration: 4
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_4.mod  -o itr_4.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_4.lst --target itr_3.lst
+compare itr_3.lst and itr_4.lst: 0.9166
+build model: itr_5.mod for iteration: 5
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_5.mod --seq sequence --geneset itr_4.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.5 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.5 6 -o gibbs_out.5 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.5 --mod itr_5.mod --seq startseq.5 --log gms.log
+-34	0.026
+-33	0.039
+-32	0.044
+-31	0.037
+-30	0.034
+-29	0.030
+-28	0.025
+-27	0.022
+-26	0.025
+-25	0.024
+-24	0.026
+-23	0.031
+-22	0.032
+-21	0.031
+-20	0.029
+-19	0.030
+-18	0.028
+-17	0.027
+-16	0.026
+-15	0.026
+-14	0.028
+-13	0.027
+-12	0.024
+-11	0.026
+-10	0.031
+-9	0.031
+-8	0.025
+-7	0.022
+-6	0.031
+-5	0.035
+-4	0.024
+-3	0.020
+-2	0.022
+-1	0.026
+0	0.023
+Pos   A   C   G   T
+1 0.331 0.014 0.415 0.240
+2 0.514 0.036 0.236 0.214
+3 0.281 0.491 0.004 0.223
+4 0.063 0.163 0.754 0.020
+5 0.013 0.088 0.568 0.332
+6 0.017 0.016 0.012 0.955
+
+system call done
+prediction, iteration: 5
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_5.mod  -o itr_5.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_5.lst --target itr_4.lst
+compare itr_4.lst and itr_5.lst: 0.9459
+build model: itr_6.mod for iteration: 6
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_6.mod --seq sequence --geneset itr_5.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.6 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.6 6 -o gibbs_out.6 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.6 --mod itr_6.mod --seq startseq.6 --log gms.log
+-34	0.026
+-33	0.041
+-32	0.044
+-31	0.038
+-30	0.035
+-29	0.031
+-28	0.026
+-27	0.024
+-26	0.025
+-25	0.024
+-24	0.027
+-23	0.032
+-22	0.033
+-21	0.031
+-20	0.030
+-19	0.029
+-18	0.027
+-17	0.026
+-16	0.025
+-15	0.025
+-14	0.028
+-13	0.026
+-12	0.022
+-11	0.025
+-10	0.031
+-9	0.030
+-8	0.026
+-7	0.024
+-6	0.031
+-5	0.032
+-4	0.022
+-3	0.020
+-2	0.021
+-1	0.027
+0	0.025
+Pos   A   C   G   T
+1 0.332 0.017 0.422 0.229
+2 0.512 0.039 0.252 0.197
+3 0.296 0.485 0.004 0.214
+4 0.061 0.187 0.728 0.024
+5 0.010 0.071 0.594 0.325
+6 0.019 0.010 0.011 0.960
+
+system call done
+prediction, iteration: 6
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_6.mod  -o itr_6.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_6.lst --target itr_5.lst
+compare itr_5.lst and itr_6.lst: 0.9587
+build model: itr_7.mod for iteration: 7
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_7.mod --seq sequence --geneset itr_6.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.7 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.7 6 -o gibbs_out.7 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.7 --mod itr_7.mod --seq startseq.7 --log gms.log
+-34	0.026
+-33	0.037
+-32	0.042
+-31	0.034
+-30	0.031
+-29	0.033
+-28	0.030
+-27	0.026
+-26	0.027
+-25	0.025
+-24	0.024
+-23	0.027
+-22	0.029
+-21	0.030
+-20	0.030
+-19	0.030
+-18	0.027
+-17	0.026
+-16	0.027
+-15	0.026
+-14	0.029
+-13	0.027
+-12	0.022
+-11	0.025
+-10	0.031
+-9	0.030
+-8	0.027
+-7	0.026
+-6	0.033
+-5	0.035
+-4	0.024
+-3	0.020
+-2	0.022
+-1	0.025
+0	0.024
+Pos   A   C   G   T
+1 0.334 0.031 0.421 0.214
+2 0.534 0.050 0.244 0.172
+3 0.308 0.480 0.004 0.208
+4 0.075 0.200 0.686 0.040
+5 0.006 0.071 0.586 0.337
+6 0.016 0.002 0.006 0.975
+
+system call done
+prediction, iteration: 7
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_7.mod  -o itr_7.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_7.lst --target itr_6.lst
+compare itr_6.lst and itr_7.lst: 0.9482
+build model: itr_8.mod for iteration: 8
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_8.mod --seq sequence --geneset itr_7.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.8 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.8 6 -o gibbs_out.8 -F -Z  -n -r -y -x -m -s 1 -w 0.01
+system call done
+make prestart model
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --gibbs gibbs_out.8 --mod itr_8.mod --seq startseq.8 --log gms.log
+-34	0.031
+-33	0.041
+-32	0.042
+-31	0.034
+-30	0.032
+-29	0.034
+-28	0.029
+-27	0.026
+-26	0.027
+-25	0.024
+-24	0.027
+-23	0.029
+-22	0.028
+-21	0.030
+-20	0.030
+-19	0.028
+-18	0.026
+-17	0.029
+-16	0.028
+-15	0.028
+-14	0.030
+-13	0.027
+-12	0.024
+-11	0.026
+-10	0.028
+-9	0.029
+-8	0.024
+-7	0.024
+-6	0.031
+-5	0.032
+-4	0.021
+-3	0.016
+-2	0.022
+-1	0.025
+0	0.025
+Pos   A   C   G   T
+1 0.320 0.042 0.420 0.218
+2 0.557 0.056 0.240 0.147
+3 0.319 0.466 0.008 0.208
+4 0.088 0.225 0.641 0.045
+5 0.005 0.058 0.604 0.334
+6 0.018 0.004 0.002 0.976
+
+system call done
+prediction, iteration: 8
+/home/jmaky/Documents/tools/gmst_linux_64/gmhmmp  sequence  -m itr_8.mod  -o itr_8.lst -r
+system call done
+compare:
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --compare --source itr_8.lst --target itr_7.lst
+compare itr_7.lst and itr_8.lst: 0.9522
+build model: itr_9.mod for iteration: 9
+/home/jmaky/Documents/tools/gmst_linux_64/probuild --par /home/jmaky/Documents/tools/gmst_linux_64/par_11.default --mkmod itr_9.mod --seq sequence --geneset itr_8.lst --ORDM 2 --order_non 2 --revcomp_non 1 --pre_start startseq.9 --PRE_START_WIDTH 40
+system call done
+run gibbs3 sampler
+/home/jmaky/Documents/tools/gmst_linux_64/Gibbs3 startseq.9 6 -o gibbs_out.9 -F -Z  -n -r -y -x -m -s 1 -w 0.01
