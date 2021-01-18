@@ -18,7 +18,7 @@ python creole.py -gmst gmst.pl -reads read.fa -o file.out -ct prok -st direct -d
 
 ```
 
-- in cluster (Slurm)
+- multiple files in cluster (Slurm)
 
 ```
 #!/bin/bash
@@ -34,11 +34,11 @@ python creole.py -gmst gmst.pl -reads read.fa -o file.out -ct prok -st direct -d
 
 module load Python
 
-export PATH=/users/genomics/joel/creoleT4:$PATH
+export PATH=/users/genomics/joel/creole:$PATH
 export PATH="$PATH:/genomics/users/joel/soft/ST_alg/gmst_linux_64"
 export PATH="$PATH:/projects_rg/joel/tools/diamond"
 
-dir="/creole/RNA/mecat"
+dir="creole/RNA/mecat"
 mkdir -p $dir
 cd $dir
 
@@ -64,24 +64,43 @@ done
 
 - Commands and options
 
-**-reads:** input fasta/fastq file
+```
+usage: creole.py [-h] [-gmst GMST_PATH] -reads INPUT_READ -o OUTPUT_FILE
+                 [-ct {prok,euka}] [-st {direct,reverse,both}]
+                 [-diamond DIAMOND_PATH] [-diamond_bd DIAMOND_BD] [-t THREADS]
+                 [-f {1,2,3,4}] [-minimap2 MINIMAP2_PATH]
+                 [-txtRef TXT_REFERENCE] [-protRef PROTEIN_REFERENCE] [-v]
 
-**-gmst:** Path to the GeneMark
+Parses command CREOLE
 
-**-diamond:** Path to the DIAMOND
-
-**-diamond_bd:** protain database
-
-**-minimap2:** Path to the Minimap2
-
-**-mr:** transcript reference
-
-**-prot:** protain reference
-
-**-o:** output files
-
-**-ct:** cell type (prok or euka)
-
-**-st:** strand (direct, reverse and both)
-
-**-f:** types of filters to select the best read match to transcript (1 - my score, 2 - mapping quality score, 3 - max mapping quality (60) and 4 - DP alignment score)
+optional arguments:
+  -h, --help            show this help message and exit
+  -gmst GMST_PATH, --gmst_path GMST_PATH
+                        points the direction of the gmst.pl file
+  -reads INPUT_READ, --input_read INPUT_READ
+                        input file (fasta or fastq format)
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        output file
+  -ct {prok,euka}, --cell_type {prok,euka}
+                        type of cell(prok/euka)
+  -st {direct,reverse,both}, --strand {direct,reverse,both}
+                        <string> sequence strand to predict genes in (default:
+                        'both'; supported: direct, reverse and both )#
+  -diamond DIAMOND_PATH, --diamond_path DIAMOND_PATH
+                        diamond path
+  -diamond_bd DIAMOND_BD, --diamond_bd DIAMOND_BD
+                        diamond BD
+  -t THREADS, --threads THREADS
+                        number of threads
+  -f {1,2,3,4}, --filter_type {1,2,3,4}
+                        choose a filter type: 1 - my score, 2 - mapping
+                        quality score, 3 - max mapping quality (60), 4 - DP
+                        alignment score
+  -minimap2 MINIMAP2_PATH, --minimap2_path MINIMAP2_PATH
+                        minimap2_path
+  -txtRef TXT_REFERENCE, --txt_reference TXT_REFERENCE
+                        reference to map the read (fasta or fastq format)
+  -protRef PROTEIN_REFERENCE, --protein_reference PROTEIN_REFERENCE
+                        annoted protein
+  -v, --verbose         Verbose mode.
+```
